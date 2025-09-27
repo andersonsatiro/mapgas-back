@@ -23,12 +23,10 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Column(nullable = false, length = 150)
+    @Column(length = 150)
     private String rua;
 
-    @NotBlank
-    @Column(nullable = false, length = 8)
+    @Column(length = 8)
     private String cep;
 
     @NotNull
