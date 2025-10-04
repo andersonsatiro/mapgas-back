@@ -1,4 +1,4 @@
-package com.ifrn.mapgas.people.entities;
+package com.ifrn.mapgas.domain.people;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.ifrn.mapgas.posto.enums;
+package com.ifrn.mapgas.domain.enums;
 
 public enum StatusSugestaoPosto {
     PENDENTE,

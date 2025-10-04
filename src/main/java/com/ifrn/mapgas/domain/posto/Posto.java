@@ -1,7 +1,7 @@
-package com.ifrn.mapgas.posto.entities;
+package com.ifrn.mapgas.domain.posto;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.ifrn.mapgas.location.entities.Endereco;
+import com.ifrn.mapgas.domain.location.Endereco;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

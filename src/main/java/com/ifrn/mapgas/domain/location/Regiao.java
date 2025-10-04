@@ -1,4 +1,4 @@
-package com.ifrn.mapgas.location.entities;
+package com.ifrn.mapgas.domain.location;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

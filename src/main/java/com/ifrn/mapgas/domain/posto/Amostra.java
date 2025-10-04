@@ -1,12 +1,9 @@
-package com.ifrn.mapgas.posto.entities;
+package com.ifrn.mapgas.domain.posto;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.ifrn.mapgas.people.entities.Usuario;
-import com.ifrn.mapgas.posto.enums.StatusSugestaoPreco;
+import com.ifrn.mapgas.domain.people.Admin;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,27 +21,34 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "sugestao_preco_posto")
-public class SugestaoPrecoPosto {
+@Table(name = "amostra")
+public class Amostra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     @Min(0)
-    @Column(nullable = false)
-    private Double valor;
+    @Column(name = "densidade", nullable = false)
+    private Double densidade;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
-    private StatusSugestaoPreco status;
+    @Min(0)
+    @Column(name = "teor_etanol", nullable = false)
+    private Double teorEtanol;
 
     @NotNull
-    @ManyToOne
-    @JsonManagedReference
-    @JoinColumn(name = "usuario_id", nullable = false, referencedColumnName = "id")
-    private Usuario usuario;
+    @Min(0)
+    @Column(name = "eficiencia_final", nullable = false)
+    private Double eficienciaFinal;
+
+    @NotNull
+    @Column(name = "data_cadastro", nullable = false)
+    private Date dataCadastro;
+
+    @NotNull
+    @Column(name = "data_coleta", nullable = false)
+    private Date dataColeta;
 
     @NotNull
     @ManyToOne
@@ -52,15 +56,11 @@ public class SugestaoPrecoPosto {
     @JoinColumn(name = "posto_id", nullable = false, referencedColumnName = "id")
     private Posto posto;
 
-    @Column(name = "data_aprovacao")
-    private Date dataAprovacao;
-
-    @Column(name = "data_rejeicao")
-    private Date dataRejeicao;
-
     @NotNull
-    @Column(name = "data_cadastro", nullable = false)
-    private Date dataCadastro;
+    @ManyToOne
+    @JsonManagedReference
+    @JoinColumn(name = "admin_id", nullable = false, referencedColumnName = "id")
+    private Admin admin;
 
     @PrePersist
     protected void onCreate() { dataCadastro = new Date(); }

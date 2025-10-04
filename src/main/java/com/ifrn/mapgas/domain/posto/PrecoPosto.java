@@ -1,4 +1,4 @@
-package com.ifrn.mapgas.posto.entities;
+package com.ifrn.mapgas.domain.posto;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;

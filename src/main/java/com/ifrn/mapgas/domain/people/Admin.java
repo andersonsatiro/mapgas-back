@@ -1,4 +1,4 @@
-package com.ifrn.mapgas.people.entities;
+package com.ifrn.mapgas.domain.people;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Column;
