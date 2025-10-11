@@ -8,6 +8,8 @@ import com.ifrn.mapgas.service.location.EnderecoService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class PostoService {
 
@@ -34,5 +36,9 @@ public class PostoService {
         posto.setEndereco(endereco);
 
         return postoRepository.save(posto);
+    }
+
+    public List<Posto> getAllPostos() {
+        return postoRepository.findAll();
     }
 }

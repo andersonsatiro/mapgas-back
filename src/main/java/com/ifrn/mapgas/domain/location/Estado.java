@@ -39,9 +39,8 @@ public class Estado {
     @Column(name = "codigo_ibge", unique = true)
     private String codigoIbge;
 
-    @NotNull
     @OneToOne
-    @JoinColumn(name = "capital_id", nullable = false, referencedColumnName = "id", unique = true)
+    @JoinColumn(name = "capital_id", referencedColumnName = "id", unique = true)
     private Cidade capital;
 
     @NotNull

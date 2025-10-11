@@ -25,7 +25,7 @@ public class Endereco {
     @Column(length = 150)
     private String rua;
 
-    @Column(length = 8)
+    @Column(length = 9)
     private String cep;
 
     @NotNull

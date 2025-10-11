@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 public class EnderecoService {
 
@@ -26,7 +28,6 @@ public class EnderecoService {
         if (postoDto == null) return null;
 
         Cidade cidade = cidadeService.findCidadeById(postoDto.getCidadeId());
-        if (cidade == null) return null;
 
         Endereco endereco = new Endereco();
         endereco.setRua(postoDto.getRua());
